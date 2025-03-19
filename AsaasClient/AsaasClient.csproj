@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
-        <LangVersion>9</LangVersion>
+        <LangVersion>latest</LangVersion>
         <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
         <PackageId>Asaas.SDK</PackageId>
         <Authors>Douglas Giovanella, Andrew Kretzer</Authors>

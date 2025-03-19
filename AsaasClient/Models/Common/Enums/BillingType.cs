@@ -2,7 +2,7 @@
 {
     public enum BillingType
     {
-        BOLETO, CREDIT_CARD, UNDEFINED
+        BOLETO, CREDIT_CARD, UNDEFINED, PIX
     }
 
     public static class BillingTypeExtension

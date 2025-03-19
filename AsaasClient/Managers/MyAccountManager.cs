@@ -3,28 +3,33 @@ using AsaasClient.Core.Response;
 using AsaasClient.Models.MyAccount;
 using System.Threading.Tasks;
 
-namespace AsaasClient.Managers
+namespace AsaasClient.Managers;
+
+public class MyAccountManager : BaseManager
 {
-    public class MyAccountManager : BaseManager
+    private const string MyAccountRoute = "/myAccount";
+    private const string PaymentCheckoutConfigRoute = MyAccountRoute + "/paymentCheckoutConfig";
+    private const string FeesRoute = MyAccountRoute + "/fees";
+
+    public MyAccountManager(ApiSettings settings) : base(settings) { }
+
+    public async Task<ResponseObject<MyAccount>> Find()
     {
-        private const string MyAccountRoute = "/myAccount";
-        private const string PaymentCheckoutConfigRoute = MyAccountRoute + "/paymentCheckoutConfig";
+        return await GetAsync<MyAccount>(MyAccountRoute);
+    }
 
-        public MyAccountManager(ApiSettings settings) : base(settings) { }
+    public async Task<ResponseObject<PaymentCheckoutConfig>> CreatePaymentCheckoutConfig(CreatePaymentCheckoutConfigRequest requestObj)
+    {
+        return await PostMultipartFormDataContentAsync<PaymentCheckoutConfig>(PaymentCheckoutConfigRoute, requestObj);
+    }
 
-        public async Task<ResponseObject<MyAccount>> Find()
-        {
-            return await GetAsync<MyAccount>(MyAccountRoute);
-        }
+    public async Task<ResponseObject<PaymentCheckoutConfig>> FindPaymentCheckoutConfig()
+    {
+        return await GetAsync<PaymentCheckoutConfig>(PaymentCheckoutConfigRoute);
+    }
 
-        public async Task<ResponseObject<PaymentCheckoutConfig>> CreatePaymentCheckoutConfig(CreatePaymentCheckoutConfigRequest requestObj)
-        {
-            return await PostMultipartFormDataContentAsync<PaymentCheckoutConfig>(PaymentCheckoutConfigRoute, requestObj);
-        }
-
-        public async Task<ResponseObject<PaymentCheckoutConfig>> FindPaymentCheckoutConfig()
-        {
-            return await GetAsync<PaymentCheckoutConfig>(PaymentCheckoutConfigRoute);
-        }
+    public async Task<ResponseObject<Fees>> FindFees()
+    {
+        return await GetAsync<Fees>(FeesRoute);
     }
 }

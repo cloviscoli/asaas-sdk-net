@@ -21,9 +21,11 @@ namespace AsaasClient.Models.Payment
 
         public string ExternalReference { get; set; }
 
-        public int InstallmentCount { get; set; }
+        public int? InstallmentCount { get; set; }
 
-        public decimal InstallmentValue { get; set; }
+        public decimal? InstallmentValue { get; set; }
+
+        public decimal? TotalValue { get; set; }
 
         public Discount Discount { get; set; }
 

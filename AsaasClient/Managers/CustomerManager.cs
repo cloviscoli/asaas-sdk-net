@@ -1,7 +1,6 @@
 ﻿using AsaasClient.Core;
 using AsaasClient.Core.Response;
 using AsaasClient.Models.Customer;
-using System;
 using System.Threading.Tasks;
 
 namespace AsaasClient.Managers
