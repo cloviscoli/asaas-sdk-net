@@ -21,6 +21,7 @@ public class AsaasApi
     private Lazy<InvoiceManager> LazyInvoice { get; }
     private Lazy<PaymentDunningManager> LazyPaymentDunning { get; }
     private Lazy<BillPaymentManager> LazyBillPayment { get; }
+    private Lazy<CreditCardManager> LazyCreditCard { get; }
     #endregion
 
     #region Managers
@@ -38,6 +39,7 @@ public class AsaasApi
     public InvoiceManager Invoice => LazyInvoice.Value;
     public PaymentDunningManager PaymentDunning => LazyPaymentDunning.Value;
     public BillPaymentManager BillPayment => LazyBillPayment.Value;
+    public CreditCardManager CreditCard => LazyCreditCard.Value;
     #endregion
 
     public AsaasApi(ApiSettings apiSettings)
@@ -56,5 +58,6 @@ public class AsaasApi
         LazyInvoice = new Lazy<InvoiceManager>(() => new InvoiceManager(apiSettings), true);
         LazyPaymentDunning = new Lazy<PaymentDunningManager>(() => new PaymentDunningManager(apiSettings), true);
         LazyBillPayment = new Lazy<BillPaymentManager>(() => new BillPaymentManager(apiSettings), true);
+        LazyCreditCard = new Lazy<CreditCardManager>(() => new CreditCardManager(apiSettings), true);
     }
 }

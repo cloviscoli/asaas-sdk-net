@@ -38,7 +38,7 @@ namespace AsaasClient.Models.Subscription
 
         public string ExternalReference { get; set; }
 
-        public CreditCard CreditCard { get; set; }
+        public Common.CreditCard CreditCard { get; set; }
 
         public bool Deleted { get; set; }
     }
