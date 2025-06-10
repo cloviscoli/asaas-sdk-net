@@ -9,7 +9,7 @@
         <Description>Biblioteda de integração da API do asaas.com</Description>
         <RepositoryType>git</RepositoryType>
         <PackageTags>asaas, api</PackageTags>
-        <Version>1.1.1</Version>
+        <Version>1.1.2</Version>
         <PackageIcon>asaas.png</PackageIcon>
     </PropertyGroup>
 
