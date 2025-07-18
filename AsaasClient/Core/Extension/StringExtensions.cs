@@ -1,10 +1,9 @@
-﻿namespace AsaasClient.Core.Extension
+﻿namespace AsaasClient.Core.Extension;
+
+public static class StringExtensions
 {
-    public static class StringExtensions
+    public static string FirstCharToLower(this string text)
     {
-        public static string FirstCharToLower(this string text)
-        {
-            return char.ToLowerInvariant(text[0]) + text.Substring(1);
-        }
+        return char.ToLowerInvariant(text[0]) + text[1..];
     }
 }
